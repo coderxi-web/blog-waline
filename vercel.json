@@ -5,14 +5,28 @@
   },
   "builds": [
     {
+      "src": "dashboard.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "index.cjs",
       "use": "@vercel/node"
     }
   ],
   "rewrites": [
     {
+      "source": "/ui(.*)",
+      "destination": "dashboard.js"
+    },
+    {
       "source": "/(.*)",
       "destination": "index.cjs"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/api/oauth/(.*)",
+      "destination": "/api/oauth?type=$1"
     }
   ]
 }
