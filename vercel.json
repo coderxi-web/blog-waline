@@ -25,6 +25,10 @@
   ],
   "redirects": [
     {
+      "source": "/favicon.ico",
+      "destination": "https://coderxi.com/favicon.ico"
+    },
+    {
       "source": "/api/oauth/(.*)",
       "destination": "/api/oauth?type=$1"
     }
